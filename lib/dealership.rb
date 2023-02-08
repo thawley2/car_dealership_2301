@@ -17,4 +17,10 @@ class Dealership
   def has_inventory?
     @inventory.length >= 1
   end
+
+  def cars_by_make(make)
+    @inventory.select do |car|
+      car.make == make
+    end
+  end
 end
