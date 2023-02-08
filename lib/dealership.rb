@@ -33,4 +33,13 @@ class Dealership
   def details
     deets = {"total_value" => total_value, "address" => @address}
   end
+
+  def average_price_of_car
+    format_number(total_value / inventory_count)
+  end
+
+  def format_number(number) #come back to this and pick it apart, found this method online
+    num_groups = number.to_s.chars.to_a.reverse.each_slice(3)
+    num_groups.map(&:join).join(',').reverse
+  end
 end
