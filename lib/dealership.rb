@@ -48,4 +48,10 @@ class Dealership
       car.total_cost
     end
   end
+
+  def inventory_hash
+    @inventory.group_by do |car|
+      car.make
+    end
+  end
 end
